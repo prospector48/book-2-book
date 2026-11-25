@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BookLoop - Search nearby books</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    fieldset { margin-bottom: 1rem; }
+    input, button { padding: .5rem; margin: .2rem 0; }
+    .card { border: 1px solid #ccc; border-radius: 8px; padding: .75rem; margin: .5rem 0; }
+    .error { color: #b00020; }
+    .muted { color: #666; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <h1>BookLoop</h1>
+
+  <fieldset id="loginBox">
+    <legend>Login</legend>
+    <form id="loginForm">
+      <input id="email" type="email" placeholder="Email" required>
+      <input id="password" type="password" placeholder="Password" required>
+      <button>Log in</button>
+    </form>
+  </fieldset>
+
+  <fieldset id="searchBox" hidden>
+    <legend>Search nearby books</legend>
+    <form id="searchForm">
+      <input id="q" placeholder="Title or author">
+      <input id="radius" type="number" min="1" max="500" value="25" style="width:5rem"> km
+      <button>Search</button>
+    </form>
+    <p class="muted" id="locStatus"></p>
+  </fieldset>
+
+  <p id="message"></p>
+  <div id="results"></div>
+
+  <script src="search.js"></script>
+</body>
+</html>
